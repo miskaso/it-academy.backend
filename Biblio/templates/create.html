@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %} Добавление{% endblock %}
+{% block head %} Добавить книгу {% endblock %}
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+        {{ add.as_p }}
+            <button type="submit">Сохранить</button>
+</form>
+
+
+{% endblock %}
+{% block foot %}
+<br><br><br><br>
+<a href="{% url 'books' %}">Список книг</a><br>
+<a href="{% url 'home' %}">Главная</a><br>
+
+
+
+
+
+{% endblock %}

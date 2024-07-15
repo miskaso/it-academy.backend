@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %} Главная{% endblock %}
+{% block head %} Hello world {% endblock %}
+{% block content %}
+
+{% if img %}
+    {% for i in img %}
+<br>
+        {% if i.my_file %}
+            <a href="{{ i.my_file.url }}">Сачать файл</a><br>
+        {% endif %}
+        {% if i.my_image %}
+            <img src="{{ i.my_image.url }}">
+        {% endif %}
+    {% endfor %}
+{% else %}
+<p> Изображений нет.</p>
+{% endif %}
+
+{% endblock %}
+{% block foot %}
+
+
+<a href="{% url 'books' %}">Список книг</a><br>
+<a href="{% url 'add' %}">Добавить книгу</a>
+
+
+{% endblock %}

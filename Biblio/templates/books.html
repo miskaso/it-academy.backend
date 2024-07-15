@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block title %} Список книг {% endblock %}
+{% block head %} <h1>Список книг:</h1> {% endblock %}
+{% block content %}
+
+{% if lbook %}
+<ul>
+    {% for i in lbook %}
+    <li>
+        Книга:<br>
+        <a href="{% url 'info' i.id %}"> {{ i }}<br> </a>Автор:<br>{{i.author}} <br><br>
+
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div>
+    <span class="step-links">
+    {% if lbook.has_previous %}
+        <a href="?page=1">&laquo; первая</a>
+        <a href="?page={{ lbook.previous_page_number }}">предыдущая</a>
+    {% endif %}
+
+    <span class="current">
+        Страница {{ lbook.number }} из {{ lbook.paginator.num_pages }}.
+    </span>
+
+    {% if lbook.has_next %}
+        <a href="?page={{ lbook.next_page_number }}">следующая</a>
+        <a href="?page={{ lbook.paginator.num_pages }}">последняя &raquo;</a>
+    {% endif %}
+</span>
+
+</div>
+
+{% endblock %}
+{% block foot %}
+
+{% for i in lbook %}
+<a href="{% url 'category' i.author %}">{{ i.author }}</a><br><br>
+{% endfor %}
+
+
+<a href="{% url 'home' %}">Главная</a><br>
+<a href="{% url 'add' %}">Добавить книгу</a>
+
+
+{% endblock %}

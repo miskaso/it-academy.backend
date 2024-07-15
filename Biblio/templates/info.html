@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %} Информация{% endblock %}
+{% block head %} <h1>O Книге {{ detail.title }} </h1>{{ detail.author }} {% endblock %}
+{% block content %}
+
+<h3> {{ detail.title }}</h3><br><br>
+<p>{{ detail.content }}</p>
+
+
+{% endblock %}
+{% block foot %}
+
+
+<a href="{% url 'books' %}">Список книг</a><br>
+<a href="{% url 'add' %}">Добавить книгу</a>
+
+
+
+
+{% endblock %}

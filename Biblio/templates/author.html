@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %} Книги автора{% endblock %}
+{% block head %} {{ new.author }} {% endblock %}
+{% block content %}
+
+        {% for i in search %}
+            <div>
+                <h3>{{ i.title }}</h3>
+                <p>{{ i.content }}</p>
+
+            </div>
+        {% endfor %}
+
+{% endblock %}
+{% block foot %}
+
+
+<a href="{% url 'books' %}">Список книг</a><br>
+<a href="{% url 'add' %}">Добавить книгу</a>
+
+
+
+
+{% endblock %}
