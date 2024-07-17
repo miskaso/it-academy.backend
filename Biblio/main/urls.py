@@ -11,5 +11,7 @@ urlpatterns = [
     path('add/', views.add, name='add'),
     path('<int:pk>', views.Dbook.as_view(), name='info'),
     path('detail/author/<str:author>/', author, name='category'),
-
+    path('set/', setcookie, name='cookie'),
+    path('show/', showcookie, name='showcookie'),
+    path('del/', del_cookie, name='del'),
 ]
