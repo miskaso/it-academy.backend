@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+ Главная
+{% endblock %}
+
+
+
+{% block head %}
+<h1>Действующие Ссылки:</h1>
+{% endblock %}
+
+{% block content %}
+
+ <a href="{% url 'add' %}">Создать заявку</a>
+<br> <a href="{% url 'show' %}">Просмотр всех заявок</a>
+
+
+
+{% endblock %}
+
+
+
+{% block foot %}
+
+{% endblock %}

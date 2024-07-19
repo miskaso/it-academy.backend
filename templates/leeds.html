@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+ Главная
+{% endblock %}
+
+
+
+{% block head %}
+<h1>Действующие заявки:</h1>
+{% endblock %}
+
+
+
+{% block content %}
+<p> Тут контент </p><br>
+{% if content %}
+{% for i in content %}
+<p>Наименование: {{ i.name }}<br>
+Срок: {{ i.date }} <br>
+Контакты: {{ i.contacts }} <br>
+ <a href="{% url 'details' i.id %}">Подробнее</a>
+<br><br></p>
+{% endfor %}
+{% endif %}
+
+
+{% endblock %}
+
+
+
+{% block foot %}
+
+{% endblock %}

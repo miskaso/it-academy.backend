@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+ Тестируем
+{% endblock %}
+
+
+
+{% block head %}
+<h1>Подробности о {{ detail.name }}</h1>
+{% endblock %}
+
+
+{% block content %}
+
+{{ detail.name }}<br>
+{{ detail.description }}<br>
+{{ detail.contacts }}<br><br>
+{{ detail.date }}<br>
+
+{% endblock %}
+
+
+
+{% block foot %}
+
+{% endblock %}
